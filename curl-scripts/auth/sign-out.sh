@@ -1,4 +1,4 @@
-curl "https://libary-express-api-devlopment.herokuapp.com/sign-out"\
+curl "http://fathomless-atoll-44992.herokuapp.com/sign-out"\
 
 --include \
 --request DELETE \

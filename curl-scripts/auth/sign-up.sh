@@ -1,4 +1,4 @@
-curl "https://libary-express-api-devlopment.herokuapp.com/sign-up"\
+curl "http://fathomless-atoll-44992.herokuapp.com//sign-up"\
 
 --include \
 --request POST \

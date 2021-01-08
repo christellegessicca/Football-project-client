@@ -1,4 +1,4 @@
-curl "https://libary-express-api-devlopment.herokuapp.com/change-password"\
+curl "http://fathomless-atoll-44992.herokuapp.com/change-password"\
 
 --include \
 --request PATCH \

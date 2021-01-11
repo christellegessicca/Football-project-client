@@ -1,13 +1,13 @@
 'use strict'
 const store = require('./../store')
 
-const signUpSuccess = function (response) {
+const onsignUpSuccess = function (response) {
   $('#message').text('Sign up Successful!')
   $('form').trigger(reset)
 
 }
 
-const signUpFailure = function (error) {
+const onsignUpFailure = function (error) {
   $('#message').text('Sign up failed' + error.responseJSON.message)
 
 }
@@ -17,12 +17,12 @@ const onSignInSuccess = function (response) {
   store.user = response.user
   $('form').trigger('reset')
   $('.authenticated').show()
-  $('.unauthenticated').hide()
+
 }
 
 const onSignInFailure = function (error) {
   $('#message').text('Please trying sigining in again!' + error.responseJSON.message)
-
+  $('form').trigger('reset')
 }
 
 const onChangePasswordSuccess = function (response) {
@@ -38,13 +38,21 @@ const onChangePasswordFailure = function (error) {
   $('.authenticated').hide()
 }
 
+const onSignOutSuccess = function (response){
+  store.user = null
+  $('message').text('Sign out was a success!')
+  $('form').trigger('reset')
+  $('.unauthenticated').hide()
+  $('on-auth').hide()
+}
+
 const onSignOutFailure = function (error){
   $('#message').text('Sign out Failed' + error.responseJSON.message)
 }
 
 module.exports = {
-  signUpSuccess,
-  signUpFailure,
+  onsignUpSuccess,
+  onsignUpFailure,
   onSignInFailure,
   onSignInSuccess,
   onChangePasswordFailure,

@@ -4,17 +4,17 @@ const config = require('./../config')
 
 const store = require('./../store')
 
-const signIn = function (formData){
+const create = function (data){
   return $.ajax({
-    url: config.apiUrl + '/sign-in',
+    url: config.apiUrl + '/players' + data.player.id,
     method:'POST',
-    data: formData
+    data: data
   })
 }
 
-const signOut = function (data){
+const destroy = function (data){
   return $.ajax({
-    url: config.apiurl + '/sign-out',
+    url: config.apiurl + '/players' + data.player.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -23,31 +23,29 @@ const signOut = function (data){
   })
 }
 
-const changePassword = function (formData){
+const index = function (data){
   return $.ajax({
-    url:config.apiUrl +'/change-password',
+    url:config.apiUrl +'/players' + data.player.id,
     method: 'PATCH',
-    data: formData,
+    data: data,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
   })
 }
 
-const signUp = function (formData){
+const update = function (data){
   return $.ajax({
-    url: config.apiUrl + '/sign-up',
+    url:config.apiUrl + '/players' + data.player.id,
     method: 'POST',
-    data: formData
+    data:data
 
   })
 }
 
-
-
 module.exports = {
-  changePassword,
-  signUp,
-  signOut,
-  signIn
+  create,
+  destroy,
+  index,
+  update
 }

@@ -13,24 +13,24 @@
     </head>
     <body>
       <h1>Football</h1>
-<p id ="message"></p>
+<p id="message"></p>
 
-<form id ="sign-up" class="unauthenticated">
-  <input type="text" id="signbox1" name="credential[email]" placeholder="email">
-  <input type="password" id ="signupb2" name="credential[password]" placeholder="password">
-  <input type= "password" id = "signup3" name="credential[password_confirmation]" placeholder= "confrim_password">
-  <button type"submit">Sign up</button>
+<form id="sign-up" class="unauthenticated">
+  <input type="text" id="signbox1" name="credentials[email]" placeholder="email">
+  <input type="password" id="signupb2" name="credentials[password]" placeholder="password">
+  <input type="password" id="signup3" name="credentials[password_confirmation]" placeholder= "confrim_password">
+  <button type="submit">Sign up</button>
 </form>
 
-<form id = "sign-in" class= "unauthenticated">
-  <input type ="text" id="loginbox1" name="credential[email]" placeholder= "Email">
-  <input type="password" id="loginbox2" name="credential[password]" placeholder="Password">
+<form id="sign-in" class="unauthenticated">
+  <input type ="text" id="loginbox1" name="credentials[email]" placeholder= "Email">
+  <input type="password" id="loginbox2" name="credentials[password]" placeholder="Password">
   <button type="submit" id="signinb" name="sign-in"> Sign In</button>
 </form>
 
-<form id ="change-password" class= "authenticated">
-  <input type ="password" id="loginform3" name="passwords[old]" placeholder= "old-password">
-  <input type= "password" id="loginform4" name="passwords[new]" placeholder = "new-password">
+<form id="change-password" class= "authenticated">
+  <input type ="password" id="loginform3" name="password[old]" placeholder= "old-password">
+  <input type= "password" id="loginform4" name="password[new]" placeholder = "new-password">
   <button type= "submit">Change Password</button>
 </form>
 
@@ -38,5 +38,25 @@
   <button type="button" id="signoutb" name="sign-out">Sign Out</button>
 </form>
 
+<div id="on-auth">
+<form id="create" class= "authenticated">
+<input type="text" name="playerName" placeholder="PlayerName">
+<input type="text" name="team" placeholder="Team">
+<input type="text" name="position" placeholder="position">
+<button type="button">Create</button>
+</form>
+
+
+<form id="update" class= "authenticated">
+<input type="text" name="playerName" placeholder="PlayerName">
+<input type="text" name="team" placeholder="Team">
+<input type="text" name="position" placeholder="position">
+<button type="button">Update</button>
+</form>
+
+<form id="destroy" class= "authenticated">
+<button type="button">Delete</button>
+</form>
+<div/>
     </body>
 </html>

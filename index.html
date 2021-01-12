@@ -12,51 +12,67 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Football</h1>
+      <h1>Football Database</h1>
 <p id="message"></p>
+<div class="container">
+<img src="public/logo.png" width="25" height="25">
+<div class="topleft"></div>
+</div>
 
-<form id="sign-up" class="unauthenticated">
-  <input type="text" id="signbox1" name="credentials[email]" placeholder="email">
-  <input type="password" id="signupb2" name="credentials[password]" placeholder="password">
-  <input type="password" id="signup3" name="credentials[password_confirmation]" placeholder= "confrim_password">
+<div class="topnav">
+ <form id="sign-up" class="unauthenticated">
+  <input type="text" a href="email" name="credentials[email]" placeholder="email"></a>
+  <input type="password" a href="pw1" name="credentials[password]" placeholder="password"></a>
+  <input type="password" a href="pw2" id="signup3" name="credentials[password_confirmation]" placeholder= "confrim_password"></a>
   <button type="submit">Sign up</button>
-</form>
+ </form>
 
-<form id="sign-in" class="unauthenticated">
+ <form id="sign-in" class="unauthenticated">
   <input type ="text" id="loginbox1" name="credentials[email]" placeholder= "Email">
   <input type="password" id="loginbox2" name="credentials[password]" placeholder="Password">
   <button type="submit" id="signinb" name="sign-in"> Sign In</button>
-</form>
+ </form>
 
-<form id="change-password" class= "authenticated">
-  <input type ="password" id="loginform3" name="passwords[old]" placeholder= "old-password">
-  <input type= "password" id="loginform4" name="passwords[new]" placeholder = "new-password">
+ <form id="change-password" class= "authenticated">
+  <input type ="password" id="loginform3" name="passwords[old]" placeholder= "old-password"/>
+  <input type= "password" id="loginform4" name="passwords[new]" placeholder = "new-password"/>
   <button type= "submit">Change Password</button>
-</form>
+ </form>
 
-<form id="sign-out" class ="authenticated">
+ <form id="sign-out" class ="authenticated">
   <button type="submit" id="signoutb" name="sign-out">Sign Out</button>
-</form>
+ </form>
+</div>
 
 <div id="on-auth">
 <form id="create" class= "authenticated">
-<input type="text" name="playerName" placeholder="PlayerName">
-<input type="text" name="team" placeholder="Team">
-<input type="text" name="position" placeholder="position">
+<input type="text" name="player[playerName]" placeholder="PlayerName"/>
+<input type="text" name="player[team]" placeholder="Team"/>
+<input type="text" name="player[position]" placeholder="position"/>
 <button type="submit">Create</button>
 </form>
 
 
 <form id="update" class= "authenticated">
-<input type="text" name="playerName" placeholder="PlayerName">
-<input type="text" name="team" placeholder="Team">
-<input type="text" name="position" placeholder="position">
+<input type="text" name="player[_id]" placeholder="player-id"/>
+<input type="text" name="player[playerName]"  placeholder="PlayerName"/>
+<input type="text" name="player[team]" placeholder="Team"/>
+<input type="text" name="player[position]" placeholder="position"/>
 <button type="submit">Update</button>
+</form>
+
+<form id="index" class= "authenticated">
+<button type="submit">Index</button>
+<p id="display-player"></p>
 </form>
 
 <form id="destroy" class= "authenticated">
 <button type="submit">Delete</button>
 </form>
 <div/>
+
+<div class="footer">
+  <p>Christelle Joseph Project</p>
+</div>
     </body>
 </html>

@@ -2,7 +2,6 @@
 const store = require('./../store')
 
 const onCreateSuccess = function (response) {
-  console.log('made it to create success')
   $('#message').text('Player created Successful!')
   // $('on-auth').show()
   $('.authenticated').show()
@@ -22,30 +21,39 @@ const onDestroySuccess = function (response) {
   $('.authenticated').show()
 }
 
-const onDestroyFailure = function (error) {
-  $('#message').text('Please try deleting again!' + error.responseJSON.message)
+const onDestroyFailure = function () {
+  $('#message').text('Please try deleting again!')
 
 }
 
 const onIndexSuccess = function (response) {
-  $('message').text('Index')
-  $('form').trigger('reset')
+for(let i = 0; i < response.players.length; i++) {
+  const playerHTML = `
+  <h4>Player name : ${response.players[i].playerName}</h4>
+  <h6>Player ID: ${response.players[i]._id}</h6>
+  <h6>Player team : ${response.players[i].team}</h6>
+  <h6>Player position :  ${response.players[i].position}</h6>
+`
+  $('#display-player').append(playerHTML)
+}
+  $('#message').text('Got index')
+
 }
 
 const onIndexFailure = function (error) {
-  store.user = null
-  $('message').text('Index not a success!')
+  // store.user = null
+  $('#message').text('Index not a success!')
   $('form').trigger('reset')
-  $('.unauthenticated').show()
-  $('.authenticated').hide()
 }
+
 const onUpdateSuccess = function (response) {
+
   $('message').text('Update was a success')
   $('form').trigger('reset')
   $('.authenticated').show()
 }
-const onUpdateFailure = function (error){
-  $('#message').text('Update Failed' + error.responseJSON.message)
+const onUpdateFailure = function (){
+  $('#message').text('Update Failed')
   $('.authenticated').show()
 }
 

@@ -22,21 +22,13 @@ const onDestroy = function(event) {
     .catch(ui.onDestroyFailure)
 }
 
-const onIndexUser = function(event) {
-  event.preventDefault(
+const onIndex = function(event) {
+  event.preventDefault()
     api.index()
     .then(ui.onIndexSuccess)
     .catch(ui.onIndexFailure)
-  )
 }
 
-const onIndexAll = function(event) {
-  event.preventDefault(
-    api.index()
-    .then(ui.onIndexSuccess)
-    .catch(ui.onIndexFailure)
-  )
-}
 const onUpdate = function(event) {
   event.preventDefault()
   const form = event.target
@@ -50,7 +42,6 @@ const onUpdate = function(event) {
 module.exports = {
   onCreate,
   onDestroy,
-  onIndexUser,
-  onIndexAll,
+  onIndex,
   onUpdate
 }

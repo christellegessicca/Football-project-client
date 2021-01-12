@@ -19,5 +19,5 @@ $(() => {
   $('#update').on('submit', playerEvents.onUpdate)
   $('#destroy').on('submit', playerEvents.onDestroy)
   $('#show').on('click', playerEvents.onShow)
-  $('#index').on('click', playerEvents.onIndexUser)
+  $('#index').on('click', playerEvents.onIndex)
 })

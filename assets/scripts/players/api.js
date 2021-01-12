@@ -17,7 +17,7 @@ const create = function (data){
 
 const destroy = function (data){
   return $.ajax({
-    url: config.apiurl + '/players' + data.player.id,
+    url: config.apiUrl + '/players/' + data.players._id,
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -28,8 +28,8 @@ const destroy = function (data){
 
 const index = function (data){
   return $.ajax({
-    url:config.apiUrl +'/players' + data.player.id,
-    method: 'PATCH',
+    url:config.apiUrl +'/players',
+    method: 'GET',
     data: data,
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -39,10 +39,12 @@ const index = function (data){
 
 const update = function (data){
   return $.ajax({
-    url:config.apiUrl + '/players' + data.player.id,
-    method: 'POST',
-    data:data
-
+    url:config.apiUrl + '/players/' + data.player._id,
+    method: 'PATCH',
+    data:data,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
   })
 }
 

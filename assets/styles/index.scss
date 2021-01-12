@@ -1,1 +1,25 @@
 @import '~bootstrap/scss/bootstrap';
+body{
+  background-color: #3b5998;
+}
+/* Create three equal columns that sits next to each other */
+.on-auth {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+img {
+  width: 30%;
+  height: auto;
+  opacity: 0.3;
+}
+/* Style the footer */
+.footer {
+  background-color: #FFFAFA;
+  padding: 10px;
+  text-align: center;
+
+}

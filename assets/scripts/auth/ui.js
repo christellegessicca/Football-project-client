@@ -38,7 +38,8 @@ const onSignOutSuccess = function (response) {
   store.user = null
   $('#message').text('Sign out was a success!')
   $('form').trigger('reset')
-  $('.unauthenticated').hide()
+  $('.unauthenticated').show()
+  $('.authenticated').hide()
 }
 
 const onSignOutFailure = function (error){

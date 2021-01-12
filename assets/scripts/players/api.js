@@ -6,9 +6,12 @@ const store = require('./../store')
 
 const create = function (data){
   return $.ajax({
-    url: config.apiUrl + '/players' + data.player.id,
-    method:'POST',
-    data: data
+    url: config.apiUrl + '/players',
+    method: 'POST',
+    data: data,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
   })
 }
 

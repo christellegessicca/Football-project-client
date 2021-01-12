@@ -5,9 +5,9 @@ const ui = require('./ui')
 const onCreate = function(event) {
   event.preventDefault()
   const form = event.target
-  const data = getFormFields(form)
-
-  api.create(data)
+  const playerData = getFormFields(form)
+  console.log(playerData)
+  api.create(playerData)
     .then(ui.onCreateSuccess)
     .catch(ui.onCreateFailure)
 }
@@ -18,11 +18,11 @@ const onDestroy = function(event) {
   const data = getFormFields(form)
 
   api.destroy(data)
-    .then(ui.onDestroySuccuess)
+    .then(ui.onDestroySuccess)
     .catch(ui.onDestroyFailure)
 }
 
-const onIndex = function(event) {
+const onIndexUser = function(event) {
   event.preventDefault(
     api.index()
     .then(ui.onIndexSuccess)
@@ -30,6 +30,13 @@ const onIndex = function(event) {
   )
 }
 
+const onIndexAll = function(event) {
+  event.preventDefault(
+    api.index()
+    .then(ui.onIndexSuccess)
+    .catch(ui.onIndexFailure)
+  )
+}
 const onUpdate = function(event) {
   event.preventDefault()
   const form = event.target
@@ -40,9 +47,10 @@ const onUpdate = function(event) {
 
 }
 
-module.export = {
+module.exports = {
   onCreate,
   onDestroy,
-  onIndex,
+  onIndexUser,
+  onIndexAll,
   onUpdate
 }

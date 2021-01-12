@@ -1,14 +1,13 @@
 'use strict'
 const store = require('./../store')
 
-const onsignUpSuccess = function (response) {
+const onSignUpSuccess = function (response) {
   $('#message').text('Sign up Successful!')
-  $('form').trigger(reset)
-
+  $('form').trigger('reset')
 }
 
-const onsignUpFailure = function (error) {
-  $('#message').text('Sign up failed' + error.responseJSON.message)
+const onSignUpFailure = function (error) {
+  $('#message').text('Sign up failed')
 
 }
 
@@ -17,46 +16,43 @@ const onSignInSuccess = function (response) {
   store.user = response.user
   $('form').trigger('reset')
   $('.authenticated').show()
+  $('.unauthenticated').hide()
 
 }
 
 const onSignInFailure = function (error) {
-  $('#message').text('Please trying sigining in again!' + error.responseJSON.message)
+  $('#message').text('Sign in failed. Please try sigining in again!')
   $('form').trigger('reset')
 }
 
 const onChangePasswordSuccess = function (response) {
-  $('message').text('Password change successful!')
+  $('#message').text('Password change successful!')
   $('form').trigger('reset')
 }
 
 const onChangePasswordFailure = function (error) {
-  store.user = null
-  $('message').text('Sign out was a success!')
-  $('form').trigger('reset')
-  $('.unauthenticated').show()
-  $('.authenticated').hide()
+  $('#message').text('Change password was not a success!' )
 }
 
-const onSignOutSuccess = function (response){
+const onSignOutSuccess = function (response) {
   store.user = null
-  $('message').text('Sign out was a success!')
+  $('#message').text('Sign out was a success!')
   $('form').trigger('reset')
   $('.unauthenticated').hide()
-  $('on-auth').hide()
 }
 
 const onSignOutFailure = function (error){
-  $('#message').text('Sign out Failed' + error.responseJSON.message)
+  $('#message').text('Sign out Failed')
 }
 
+
 module.exports = {
-  onsignUpSuccess,
-  onsignUpFailure,
-  onSignInFailure,
-  onSignInSuccess,
+  onSignUpSuccess,
+  onSignUpFailure,
   onChangePasswordFailure,
   onChangePasswordSuccess,
   onSignOutFailure,
+  onSignOutSuccess,
+  onSignInFailure,
   onSignInSuccess
 }

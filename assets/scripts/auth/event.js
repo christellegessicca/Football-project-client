@@ -8,17 +8,16 @@ const onSignUp = function(event) {
   const form = event.target
   const data = getFormFields(form)
   api.signUp(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.signUpFailure)
+    .then(ui.onSignUpSuccess)
+    .catch(ui.onSignUpFailure)
 }
 
 const onSignIn = function(event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-console.log('Made it to signin')
   api.signIn(data)
-    .then(ui.onSignInSuccuess)
+    .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
 }
 
@@ -33,11 +32,11 @@ const onChangePassword = function(event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  api.chnagePassowrd(data)
+  api.changePassword(data)
     .then(ui.onChangePasswordSuccess)
     .catch(ui.onChangePasswordFailure)
-
 }
+
 
 module.exports = {
   onSignUp,

@@ -9,17 +9,17 @@ const signIn = function (formData){
     url: config.apiUrl + '/sign-in',
     method:'POST',
     data: formData
+
   })
 }
 
-const signOut = function (data){
+const signOut = function () {
   return $.ajax({
-    url: config.apiurl + '/sign-out',
+    url: config.apiUrl + '/sign-out',
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-
-    }
+}
   })
 }
 

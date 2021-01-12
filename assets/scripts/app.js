@@ -7,19 +7,17 @@ const playerEvents = require('./players/event')
 // require('./example')
 
 $(() => {
-
+//user listeners
   $('.authenticated').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#change-password').on('submit', authEvents.onChangePassword)
 
-  // CRUD actions
-  $('#create').on('click', playerEvents.onCreate)
-  $('#update').on('click', playerEvents.onUpdate)
-  $('#destroy').on('click', playerEvents.onDestroy)
-
-  //hide untill authenticated
-  $('#on-auth').hide()
-
+  // CRUD listeners
+  $('#create').on('submit', playerEvents.onCreate)
+  $('#update').on('submit', playerEvents.onUpdate)
+  $('#destroy').on('submit', playerEvents.onDestroy)
+  $('#show').on('click', playerEvents.onShow)
+  $('#index').on('click', playerEvents.onIndexUser)
 })

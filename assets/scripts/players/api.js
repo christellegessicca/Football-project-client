@@ -15,16 +15,6 @@ const create = function (data){
   })
 }
 
-const destroy = function (data){
-  return $.ajax({
-    url: config.apiUrl + '/players/' + data.players._id,
-    method: 'DELETE',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-
-    }
-  })
-}
 
 const index = function (data){
   return $.ajax({
@@ -48,9 +38,19 @@ const update = function (data){
   })
 }
 
+const destroy = function (data){
+  return $.ajax({
+    url: config.apiUrl + '/players/' + data.player._id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+
+    }
+  })
+}
 module.exports = {
   create,
-  destroy,
   index,
-  update
+  update,
+  destroy
 }

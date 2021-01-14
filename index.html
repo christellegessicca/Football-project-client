@@ -46,33 +46,34 @@
 
 <div id="on-auth">
 <form id="create" class= "authenticated">
-<input type="text" name="player[playerName]" placeholder="PlayerName"/>
-<input type="text" name="player[team]" placeholder="Team"/>
-<input type="text" name="player[position]" placeholder="position"/>
-<button type="submit">Create</button>
+ <input type="text" name="player[playerName]" placeholder="PlayerName"/>
+ <input type="text" name="player[team]" placeholder="Team"/>
+ <input type="text" name="player[position]" placeholder="position"/>
+ <button type="submit">Create</button>
 </form>
 
-
 <form id="update" class= "authenticated">
-<input type="text" name="player[_id]" placeholder="player-id"/>
-<input type="text" name="player[playerName]"  placeholder="PlayerName"/>
-<input type="text" name="player[team]" placeholder="Team"/>
-<input type="text" name="player[position]" placeholder="position"/>
+ <input type="text" name="player[_id]" placeholder="player-id"/>
+ <input type="text" name="player[playerName]"  placeholder="PlayerName"/>
+ <input type="text" name="player[team]" placeholder="Team"/>
+ <input type="text" name="player[position]" placeholder="position"/>
 <button type="submit">Update</button>
 </form>
 
 <form id="index" class= "authenticated">
-<button type="submit">Index</button>
-<p id="display-player"></p>
+ <button type="submit">Index</button>
+ <p id="displayplayer"></p>
 </form>
 
-<form id="destroy" class= "authenticated">
-<button type="submit">Delete</button>
-</form>
+ <form id="destroy" class= "authenticated">
+  <input type="text" name="player[_id]" placeholder="player_id"/>
+  <button type="submit">Delete</button>
+ </form>
 <div/>
 
 <div class="footer">
   <p>Christelle Joseph Project</p>
 </div>
-    </body>
+
+</body>
 </html>

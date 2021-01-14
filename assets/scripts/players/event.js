@@ -4,9 +4,10 @@ const ui = require('./ui')
 
 const onCreate = function(event) {
   event.preventDefault()
+  // gets events from getFormFields
   const form = event.target
   const playerData = getFormFields(form)
-  console.log(playerData)
+
   api.create(playerData)
     .then(ui.onCreateSuccess)
     .catch(ui.onCreateFailure)
@@ -24,6 +25,7 @@ const onDestroy = function(event) {
 
 const onIndex = function(event) {
   event.preventDefault()
+
     api.index()
     .then(ui.onIndexSuccess)
     .catch(ui.onIndexFailure)

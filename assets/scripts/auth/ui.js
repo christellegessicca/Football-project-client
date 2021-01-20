@@ -7,7 +7,7 @@ const onSignUpSuccess = function (response) {
 }
 
 const onSignUpFailure = function (error) {
-  $('#message').text('Sign up failed')
+  $('#message').text('Sign up failed ' + error.responseJSON.message)
 
 }
 

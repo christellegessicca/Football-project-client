@@ -1,4 +1,4 @@
-# Application Title: A Description
+# Application Title: Fantasy Football
 
 This application allows the user to do sign up, sign in, change password, sign out. Create a new player, update player and delete player.
 
